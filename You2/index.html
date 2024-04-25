@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASA Website</title>
+  <style>
+    body {
+      background-image: url('starfield.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #000;
+      color: #fff;
+    }
+
+    button {
+      margin: 0 5px;
+      padding: 10px 20px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    main {
+      text-align: center;
+      padding: 50px;
+    }
+
+    img {
+      width: 300px;
+      height: 300px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #000;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NASA Website</h1>
+    <button id="mercury">Mercury</button>
+    <button id="venus">Venus</button>
+    <button id="earth">Earth</button>
+    <button id="mars">Mars</button>
+    <button id="jupiter">Jupiter</button>
+    <button id="saturn">Saturn</button>
+    <button id="uranus">Uranus</button>
+    <button id="neptune">Neptune</button>
+    <button id="pluto">Pluto</button>
+  </header>
+
+  <main>
+    <img id="planetImage" src="" alt="">
+    <label id="planetDescription">This is the description of the planet.</label>
+
+  </main>
+
+  <footer>
+    &copy; 2024 NASA. All rights reserved.
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('button');
+    const planetImage = document.getElementById('planetImage');
+    const planetDescription = document.getElementById('planetDescription');
+
+    const planets = {
+      mercury: {
+        image: 'mercury.jpg',
+        description: 'Mercury is the smallest planet in our solar system and closest to the Sun.'
+      },
+      venus: {
+        image: 'venus.jpg',
+        description: 'Venus is the second planet from the Sun and is known for its thick atmosphere.'
+      },
+      earth: {
+        image: 'earth.jpg',
+        description: 'Earth is the third planet from the Sun and the only known celestial body to support life.'
+      },
+      mars: {
+        image: 'mars.jpg',
+        description: 'Mars is the fourth planet from the Sun and is often called the Red Planet.'
+      },
+      jupiter: {
+        image: 'jupiter.jpg',
+        description: 'Jupiter is the largest planet in our solar system and is known for its colorful bands of clouds.'
+      },
+      saturn: {
+        image: 'saturn.jpg',
+        description: 'Saturn is the sixth planet from the Sun and is famous for its beautiful rings.'
+      },
+      uranus: {
+        image: 'uranus.jpg',
+        description: 'Uranus is the seventh planet from the Sun and is known for its unique sideways rotation.'
+      },
+      neptune: {
+        image: 'neptune.jpg',
+        description: 'Neptune is the eighth planet from the Sun and is known for its deep blue color.'
+      },
+      pluto: {
+        image: 'pluto.jpg',
+        description: 'Pluto is a dwarf planet and the farthest known object in our solar system.'
+      }
+    };
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const planet = button.id;
+        planetImage.src = planets[planet].image;
+        planetDescription.innerText = planets[planet].description;
+      });
+    });
+  </script>
+</body>
+</html>
