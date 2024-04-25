@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('starfield.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    section {
+      text-align: center;
+      padding: 20px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    footer {
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #333;
+      padding: 10px 0;
+      color: white;
+    }
+  </style>
+  <title>NASA Planets</title>
+</head>
+<body>
+  <header>
+    <h1>NASA Planets</h1>
+    <nav>
+      <button onclick="showPlanet('mercury')">Mercury</button>
+      <button onclick="showPlanet('venus')">Venus</button>
+      <button onclick="showPlanet('earth')">Earth</button>
+      <button onclick="showPlanet('mars')">Mars</button>
+      <button onclick="showPlanet('jupiter')">Jupiter</button>
+      <button onclick="showPlanet('saturn')">Saturn</button>
+      <button onclick="showPlanet('uranus')">Uranus</button>
+      <button onclick="showPlanet('neptune')">Neptune</button>
+    </nav>
+  </header>
+  <section id="planetInfo">
+    <img id="planetImage" src="earth.jpg" alt="Earth">
+    <p id="planetDescription">Earth is the third planet from the Sun and the only astronomical object known to harbor life.</p>
+  </section>
+  <footer>
+    &copy; 2022 NASA
+  </footer>
+  <script>
+    function showPlanet(planet) {
+      const planetImage = document.getElementById('planetImage');
+      const planetDescription = document.getElementById('planetDescription');
+      
+      switch (planet) {
+        case 'mercury':
+          planetImage.src = 'mercury.jpg';
+          planetDescription.innerText = 'Mercury is the smallest and innermost planet in the Solar System.';
+          break;
+        case 'venus':
+          planetImage.src = 'venus.jpg';
+          planetDescription.innerText = 'Venus is the second planet from the Sun. It has a thick atmosphere.';
+          break;
+        case 'earth':
+          planetImage.src = 'earth.jpg';
+          planetDescription.innerText = 'Earth is the third planet from the Sun and the only astronomical object known to harbor life.';
+          break;
+        case 'mars':
+          planetImage.src = 'mars.jpg';
+          planetDescription.innerText = 'Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System.';
+          break;
+        case 'jupiter':
+          planetImage.src = 'jupiter.jpg';
+          planetDescription.innerText = 'Jupiter is the fifth planet from the Sun and the largest in the Solar System.';
+          break;
+        case 'saturn':
+          planetImage.src = 'saturn.jpg';
+          planetDescription.innerText = 'Saturn is the sixth planet from the Sun and the second-largest in the Solar System.';
+          break;
+        case 'uranus':
+          planetImage.src = 'uranus.jpg';
+          planetDescription.innerText = 'Uranus is the seventh planet from the Sun.';
+          break;
+        case 'neptune':
+          planetImage.src = 'neptune.jpg';
+          planetDescription.innerText = 'Neptune is the eighth and farthest known planet from the Sun in the Solar System.';
+          break;
+        default:
+          break;
+      }
+    }
+  </script>
+</body>
+</html>
