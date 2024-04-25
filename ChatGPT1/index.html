@@ -1,131 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NASA Planets</title>
+    <title>Explore the Solar System</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-        }
-
-        .header {
-            background-color: #000;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .button {
-            background-color: #4CAF50;
-            border: none;
+            background-image: url('https://www.nasa.gov/sites/default/files/thumbnails/image/hubble-stunning-m51-whirlpool-galaxy-2048x1365.jpg');
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 8px;
         }
 
-        .button:hover {
-            background-color: #45a049;
-        }
-
-        .container {
+        header {
+            background-color: rgba(0, 0, 0, 0.5);
             padding: 20px;
             text-align: center;
         }
 
-        .footer {
-            background-color: #000;
-            color: #fff;
-            padding: 10px;
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid white;
+            border-radius: 5px;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .planet-info {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        footer {
             position: fixed;
             bottom: 0;
             width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 0;
             text-align: center;
-        }
-
-        .planet-img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
         }
     </style>
 </head>
-
 <body>
-    <div class="header">
-        <h1>NASA Planets</h1>
-        <button class="button" onclick="showPlanet('mercury')">Mercury</button>
-        <button class="button" onclick="showPlanet('venus')">Venus</button>
-        <button class="button" onclick="showPlanet('earth')">Earth</button>
-        <button class="button" onclick="showPlanet('mars')">Mars</button>
-        <button class="button" onclick="showPlanet('jupiter')">Jupiter</button>
-        <button class="button" onclick="showPlanet('saturn')">Saturn</button>
-        <button class="button" onclick="showPlanet('uranus')">Uranus</button>
-        <button class="button" onclick="showPlanet('neptune')">Neptune</button>
+    <header>
+        <h1>Explore the Solar System</h1>
+        <nav>
+            <a href="#" onclick="showPlanet('Mercury')">Mercury</a>
+            <a href="#" onclick="showPlanet('Venus')">Venus</a>
+            <a href="#" onclick="showPlanet('Earth')">Earth</a>
+            <a href="#" onclick="showPlanet('Mars')">Mars</a>
+            <a href="#" onclick="showPlanet('Jupiter')">Jupiter</a>
+            <a href="#" onclick="showPlanet('Saturn')">Saturn</a>
+            <a href="#" onclick="showPlanet('Uranus')">Uranus</a>
+            <a href="#" onclick="showPlanet('Neptune')">Neptune</a>
+        </nav>
+    </header>
+
+    <div class="planet-info">
+        <img src="" alt="Planet Image" id="planet-image">
+        <p id="planet-description">Select a planet to learn more about it.</p>
     </div>
 
-    <div class="container">
-        <img src="https://via.placeholder.com/800x400?text=Select+a+planet" id="planetImg" class="planet-img"
-            alt="Planet Image">
-        <p id="planetDesc">Select a planet from the buttons above</p>
-    </div>
-
-    <div class="footer">
-        <p>&copy; 2024 NASA. All rights reserved.</p>
-    </div>
+    <footer>
+        <p>&copy; 2024 NASA</p>
+    </footer>
 
     <script>
         function showPlanet(planet) {
-            var planetImg = document.getElementById('planetImg');
-            var planetDesc = document.getElementById('planetDesc');
+            const planetImage = document.getElementById('planet-image');
+            const planetDescription = document.getElementById('planet-description');
 
+            // Update image source and description based on the selected planet
             switch (planet) {
-                case 'mercury':
-                    planetImg.src = 'https://via.placeholder.com/800x400?text=Mercury';
-                    planetDesc.innerText = 'Mercury is the smallest planet in the Solar System and the closest to the Sun.';
+                case 'Mercury':
+                    planetImage.src = 'https://www.nasa.gov/sites/default/files/thumbnails/image/mercury-truecolor-2008.jpg';
+                    planetDescription.textContent = 'Mercury is the smallest planet in our solar system and closest to the Sun.';
                     break;
-                case 'venus':
-                    planetImg.src = 'https://via.placeholder.com/800x400?text=Venus';
-                    planetDesc.innerText = 'Venus is the second planet from the Sun and is named after the Roman goddess of love and beauty.';
+                case 'Venus':
+                    planetImage.src = 'https://www.nasa.gov/sites/default/files/thumbnails/image/venus-20090324-1500c.jpg';
+                    planetDescription.textContent = 'Venus is the second planet from the Sun and is often called Earth\'s "sister planet".';
                     break;
-                case 'earth':
-                    planetImg.src = 'https://via.placeholder.com/800x400?text=Earth';
-                    planetDesc.innerText = 'Earth is the third planet from the Sun and the only astronomical object known to harbor life.';
+                case 'Earth':
+                    planetImage.src = 'https://www.nasa.gov/sites/default/files/thumbnails/image/epic-earth-aug21-2017.png';
+                    planetDescription.textContent = 'Earth is the third planet from the Sun and the only known planet to support life.';
                     break;
-                case 'mars':
-                    planetImg.src = 'https://via.placeholder.com/800x400?text=Mars';
-                    planetDesc.innerText = 'Mars is the fourth planet from the Sun and is often called the Red Planet.';
+                case 'Mars':
+                    planetImage.src = 'https://www.nasa.gov/sites/default/files/thumbnails/image/pia21723-16.jpg';
+                    planetDescription.textContent = 'Mars is often called the "Red Planet" due to its reddish appearance.';
                     break;
-                case 'jupiter':
-                    planetImg.src = 'https://via.placeholder.com/800x400?text=Jupiter';
-                    planetDesc.innerText = 'Jupiter is the fifth planet from the Sun and the largest in the Solar System.';
+                case 'Jupiter':
+                    planetImage.src = 'https://www.nasa.gov/sites/default/files/thumbnails/image/pia22957-16.jpg';
+                    planetDescription.textContent = 'Jupiter is the largest planet in our solar system and is known for its Great Red Spot.';
                     break;
-                case 'saturn':
-                    planetImg.src = 'https://via.placeholder.com/800x400?text=Saturn';
-                    planetDesc.innerText = 'Saturn is the sixth planet from the Sun and is known for its rings.';
+                case 'Saturn':
+                    planetImage.src = 'https://www.nasa.gov/sites/default/files/thumbnails/image/pia23645-1041.jpg';
+                    planetDescription.textContent = 'Saturn is known for its spectacular ring system, made mostly of ice particles.';
                     break;
-                case 'uranus':
-                    planetImg.src = 'https://via.placeholder.com/800x400?text=Uranus';
-                    planetDesc.innerText = 'Uranus is the seventh planet from the Sun and is tilted on its side.';
+                case 'Uranus':
+                    planetImage.src = 'https://www.nasa.gov/sites/default/files/thumbnails/image/pia18182.jpg';
+                    planetDescription.textContent = 'Uranus is the seventh planet from the Sun and is unique because it rotates on its side.';
                     break;
-                case 'neptune':
-                    planetImg.src = 'https://via.placeholder.com/800x400?text=Neptune';
-                    planetDesc.innerText = 'Neptune is the eighth planet from the Sun and is known for its blue color.';
+                case 'Neptune':
+                    planetImage.src = 'https://www.nasa.gov/sites/default/files/thumbnails/image/neptune-pia01492.jpg';
+                    planetDescription.textContent = 'Neptune is the eighth and farthest known planet from the Sun in the Solar System.';
                     break;
                 default:
-                    break;
+                    planetImage.src = '';
+                    planetDescription.textContent = 'Select a planet to learn more about it.';
             }
         }
     </script>
 </body>
-
 </html>
