@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Our Solar System - NASA</title>
+    <style>
+        /* Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("path/to/starfield.jpg"); /* Replace with path to your starfield image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
+        header h1 {
+            margin-right: 50px;
+            font-size: 2.5rem;
+        }
+
+        /* Improved Contrast for Buttons with WCAG compliance check */
+        header button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        /* Light Background  - Use dark text for good contrast */
+        header button {
+            background-color: #e9ecef; /* Light background color */
+            color: black; /* Dark text color for good contrast */
+        }
+
+        header button:hover {
+            background-color: #cfd2d7;
+        }
+
+        /* Content Styles */
+        main {
+            display: flex;
+            flex-direction: column;
+            align- items: center;
+            padding: 50px;
+            color: white;
+            text-align: center;
+        }
+
+        main img {
+            width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Added description for label */
+        main label {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            display: none; /* Initially hide the label */
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Explore the Solar System</h1>
+        <button id="mercury">Mercury</button>
+        <button id="venus">Venus</button>
+        <button id="earth">Earth</button>
+        <button id="mars">Mars</button>
+        <button id="jupiter">Jupiter</button>
+        <button id="saturn">Saturn</button>
+        <button id="uranus">Uranus</button>
+        <button id="neptune">Neptune</button>
+    </header>
+    <main>
+        <img id="planet-image" src="" alt="Selected Planet">
+        <label id="planet-description">A description of the selected planet will be displayed here.</label>
+    </main>
+    <footer>
+        &copy; NASA 2024
+    </footer>
+
+    <script>
+        // Function to update planet image and description
+        function updatePlanet(planetName) {
+            const imageElement = document.getElementById("planet-image");
+            const descriptionElement = document.getElementById("planet-description");
+
+            switch (planetName) {
+                case "mercury":
+                    imageElement.src = "path/to/mercury.jpg"; // Replace with path to your Mercury image
+                    descriptionElement.textContent = "Mercury is the smallest planet in our solar system...";
+                    descriptionElement
