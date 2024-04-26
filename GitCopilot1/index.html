@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('starfield.jpg');
+            color: white;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        button {
+            margin: 5px;
+        }
+        #planetImage {
+            display: block;
+            margin: 0 auto;
+            width: 50%;
+        }
+        #planetDescription {
+            text-align: center;
+            margin-top: 20px;
+        }
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button onclick="changePlanet('Mercury')">Mercury</button>
+        <button onclick="changePlanet('Venus')">Venus</button>
+        <button onclick="changePlanet('Earth')">Earth</button>
+        <button onclick="changePlanet('Mars')">Mars</button>
+        <button onclick="changePlanet('Jupiter')">Jupiter</button>
+        <button onclick="changePlanet('Saturn')">Saturn</button>
+        <button onclick="changePlanet('Uranus')">Uranus</button>
+        <button onclick="changePlanet('Neptune')">Neptune</button>
+    </header>
+    <img id="planetImage" src="placeholder.jpg" alt="Planet Image">
+    <label id="planetDescription">Planet Description</label>
+    <footer>
+        &copy; 2022 NASA
+    </footer>
+    <script>
+        function changePlanet(planet) {
+            document.getElementById('planetImage').src = planet.toLowerCase() + '.jpg';
+            document.getElementById('planetDescription').innerText = 'Description of ' + planet;
+        }
+    </script>
+</body>
+</html>
