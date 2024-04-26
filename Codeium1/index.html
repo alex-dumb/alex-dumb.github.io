@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NASA Solar System</title>
+  <style>
+    body {
+      background-image: url('starfield.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    
+    header {
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .planet-button {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px;
+      background-color: #ccc;
+      color: #000;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    
+    .planet-button:hover {
+      background-color: #999;
+    }
+    
+    .planet-body {
+      margin: 20px;
+      text-align: left;
+    }
+    
+    .planet-image {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      border-radius: 5px;
+    }
+    
+    .planet-description {
+      margin-top: 10px;
+    }
+    
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NASA Solar System</h1>
+    <a href="#" class="planet-button">Mercury</a>
+    <a href="#" class="planet-button">Venus</a>
+    <a href="#" class="planet-button">Earth</a>
+    <a href="#" class="planet-button">Mars</a>
+    <a href="#" class="planet-button">Jupiter</a>
+    <a href="#" class="planet-button">Saturn</a>
+    <a href="#" class="planet-button">Uranus</a>
+    <a href="#" class="planet-button">Neptune</a>
+  </header>
+  
+  <div class="planet-body">
+    <img src="earth.jpg" alt="Earth" class="planet-image">
+    <p class="planet-description">Earth is the third planet from the Sun and the only object in the Universe known to harbor life.</p>
+  </div>
+  
+  <footer>
+    &copy; 2022 NASA. All rights reserved.
+  </footer>
+  
+  <script>
+    const planetButtons = document.querySelectorAll('.planet-button');
+    
+    planetButtons.forEach(button => {
+      button.addEventListener('click', event => {
+        event.preventDefault();
+        const planet = event.target.textContent;
+        const planetImage = document.querySelector('.planet-image');
+        const planetDescription = document.querySelector('.planet-description');
+        
+        // Update planet image and description based on the selected planet
+        switch (planet) {
+          case 'Mercury':
+            planetImage.src = 'mercury.jpg';
+            planetDescription.textContent = 'Mercury is the smallest planet in our solar system, known for its extremely hot surface and very slow rotation.';
+            break;
+          case 'Venus':
+            planetImage.src = 'venus.jpg';
+            planetDescription.textContent = 'Venus is the second planet from the Sun and is known for its runaway greenhouse effect, making it the hottest planet in our solar system.';
