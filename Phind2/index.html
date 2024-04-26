@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Solar System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://images.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia19304_1024.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            text-align: center;
+        }
+        .planet-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px;
+        }
+        .planet-button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .planet-button:hover {
+            background-color: #0056b3;
+        }
+        .planet-info {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin: 20px;
+        }
+        .planet-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NASA Solar System</h1>
+    </header>
+    <div class="planet-buttons">
+        <button class="planet-button" onclick="showPlanetInfo('Mercury')">Mercury</button>
+        <button class="planet-button" onclick="showPlanetInfo('Venus')">Venus</button>
+        <button class="planet-button" onclick="showPlanetInfo('Earth')">Earth</button>
+        <button class="planet-button" onclick="showPlanetInfo('Mars')">Mars</button>
+        <button class="planet-button" onclick="showPlanetInfo('Jupiter')">Jupiter</button>
+        <button class="planet-button" onclick="showPlanetInfo('Saturn')">Saturn</button>
+        <button class="planet-button" onclick="showPlanetInfo('Uranus')">Uranus</button>
+        <button class="planet-button" onclick="showPlanetInfo('Neptune')">Neptune</button>
+    </div>
+    <div class="planet-info" id="planetInfo">
+        <img class="planet-image" src="" alt="Planet Image">
+        <p id="planetDescription"></p>
+    </div>
+    <footer>
+        <p>&copy; 2023 NASA Solar System</p>
+    </footer>
+
+    <script>
+        function showPlanetInfo(planet) {
+            const planetInfo = document.getElementById('planetInfo');
+            const planetDescription = document.getElementById('planetDescription');
+            const planetImage = document.querySelector('.planet-image');
+
+            planetInfo.style.display = 'block';
+            planetImage.src = `https://images.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/${planet.toLowerCase()}_1024.jpg`;
+            planetDescription.textContent = `The ${planet} is the third planet from the Sun and the only astronomical object known to harbor an atmosphere with free floating molecules. It is the densest and smallest of the four terrestrial planets in the Solar System.`;
+        }
+    </script>
+</body>
+</html>
