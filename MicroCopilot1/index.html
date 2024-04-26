@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Solar System</title>
+    <style>
+        body {
+            background-image: url('starfield.jpg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header button {
+            background-color: #0074D9;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .planet-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+        .planet-image {
+            max-width: 80%;
+            max-height: 80%;
+            border: 5px solid white;
+            border-radius: 10px;
+        }
+        .planet-description {
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NASA Solar System</h1>
+        <button id="mercury">Mercury</button>
+        <button id="venus">Venus</button>
+        <button id="earth">Earth</button>
+        <!-- Add buttons for other planets -->
+    </header>
+    <div class="planet-container">
+        <img class="planet-image" id="planet-image" src="" alt="Planet">
+        <p class="planet-description" id="planet-description"></p>
+    </div>
+    <footer>
+        © 2023 NASA
+    </footer>
+    <script>
+        const planetImage = document.getElementById('planet-image');
+        const planetDescription = document.getElementById('planet-description');
+        
+        // Event listeners for planet buttons
+        document.getElementById('mercury').addEventListener('click', () => {
+            planetImage.src = 'mercury.jpg';
+            planetDescription.textContent = 'Mercury is the closest planet to the Sun and has a thin atmosphere.';
+        });
+        document.getElementById('venus').addEventListener('click', () => {
+            planetImage.src = 'venus.jpg';
+            planetDescription.textContent = 'Venus is known for its thick, toxic atmosphere and extreme temperatures.';
+        });
+        document.getElementById('earth').addEventListener('click', () => {
+            planetImage.src = 'earth.jpg';
+            planetDescription.textContent = 'Earth is the only known planet with life and abundant water.';
+        });
+        // Add event listeners for other planets
+        
+    </script>
+</body>
+</html>
